@@ -4,6 +4,7 @@ import com.food.ordering.system.domain.entity.BaseEntity;
 import com.food.ordering.system.domain.valueobject.Money;
 import com.food.ordering.system.domain.valueobject.ProductId;
 
+@SuppressWarnings("LombokGetterMayBeUsed")
 public class Product extends BaseEntity<ProductId> {
 
     private String name;
@@ -13,6 +14,10 @@ public class Product extends BaseEntity<ProductId> {
         super.setId(productId);
         this.name = name;
         this.price = price;
+    }
+
+    public Product(ProductId productId) {
+        super.setId(productId);
     }
 
     public void updateWithConfirmedNameAndPrice(String name, Money price) {
